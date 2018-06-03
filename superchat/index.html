@@ -23,12 +23,12 @@
     <section id="zone_chat"></section>
 
 
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="/src/socket.io.js"></script>
     <script>
 
             // Connexion à socket.io
-            var socket = io.connect('https://localhost:8080');
+        var socket = io.connect('http://mihoubahmed.github.io:8080/superchat');
 
             // On demande le pseudo, on l'envoie au serveur et on l'affiche dans le titre
             var pseudo = prompt('Quel est votre pseudo ?');
