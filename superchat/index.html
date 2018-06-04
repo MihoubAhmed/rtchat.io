@@ -28,7 +28,7 @@
     <script>
 
             // Connexion à socket.io
-        var socket = io.connect('https://mihoubahmed.github.io/', { secure: true });
+        var socket = io.connect('https://mihoubahmed.github.io/', { rejectUnauthorized: false });
 
             // On demande le pseudo, on l'envoie au serveur et on l'affiche dans le titre
             var pseudo = prompt('Quel est votre pseudo ?');
