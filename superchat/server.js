@@ -3,7 +3,8 @@ var app = require('express')(),
     io = require('socket.io').listen(server),
     ent = require('ent'), // Permet de bloquer les caractères HTML (sécurité équivalente à htmlentities en PHP)
     fs = require('fs'),
-    cors = require('cors');
+    cors = require('cors'),
+    https = require('https');
 
 
 // Chargement de la page index.html
@@ -49,4 +50,13 @@ io.sockets.on('connection', function (socket, pseudo) {
     });
 });
 
-server.listen(8080);
+server.listen(80);
+
+
+// This line is from the Node.js HTTPS documentation.
+var options = {
+    key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+    cert: fs.readFileSync('test/fixtures/keys/agent2-cert.cert')
+};
+// Create an HTTPS service identical to the HTTP service.
+https.createServer(options, app).listen(443);
