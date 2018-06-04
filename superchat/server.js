@@ -49,4 +49,4 @@ io.sockets.on('connection', function (socket, pseudo) {
     });
 });
 
-server.listen(443);
+server.listen(8080);
